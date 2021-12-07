@@ -1,9 +1,43 @@
-# Created by Matthew Kim - 20882490
+
 
 def getBoardCopy(board):
     # Make a copy of the board list and return it.
     boardCopy = []
     for i in board:
         boardCopy.append(i)
-        return boardCopy
+    return boardCopy
+    
+    def isSpaceFree(board, move):
+        # Return True if the passed move is free on the passed board.
+        return board[move] == ' '
         
+        def getPlayerMove(board):
+            # Let the player enter their move.
+            move = ' '
+            while move not in '1 2 3 4 5 6 7 8 9' .split() or not
+                isSpaceFree(board, int(move)):
+                  print('What is your next move? (1-9)')
+                  move = input()
+            return int(move)
+            
+    def chooseRandomMoveFromList(board, movesList):
+        # Returns a valid move from the passed list on the passed board.
+       # Returns None if there is no valid move.
+        possibleMoves = []
+        for i in movesList:
+            if isSpaceFree(board, i):
+                possibleMoves.append(i)
+                
+        if len(possibleMoves) != 0:
+            return random.choice(possibleMoves)
+        else:
+            return None
+            
+     def getComputerMove(board, computerLetter):
+        # Given a board and the computer's letter, determine where to move and return that move.
+        if computerLetter == 'X':
+            playerLetter = 'O'
+        else:
+            playerLetter = 'X'
+            
+            
