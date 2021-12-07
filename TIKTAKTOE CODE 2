@@ -1,4 +1,4 @@
-# Created by Matthew Kim - 20882490
+# Lines 51-88 Created by Matthew Kim - 20882490
 
 def getBoardCopy(board):
     # Make a copy of the board list and return it.
