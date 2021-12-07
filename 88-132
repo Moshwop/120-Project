@@ -1,7 +1,7 @@
          playerLetter = 'X'
 
-     # Here is the algorithm for our Tic-Tac-Toe AI:
-     # First, check if we can win in the next move.
+     # Tic Tac Toe algorithm
+     # Checking to see if there are possibilities to win
      for i in range(1, 10):
          boardCopy = getBoardCopy(board)
          if isSpaceFree(boardCopy, i):
@@ -9,7 +9,7 @@
              if isWinner(boardCopy, computerLetter):
                 return i
  
-      # Check if the player could win on their next move and block them.
+      # Checking if player can win and block the opponent
      for i in range(1, 10):
          boardCopy = getBoardCopy(board)
          if isSpaceFree(boardCopy, i):
