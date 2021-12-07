@@ -45,3 +45,97 @@ while True:
     print('Do you want to play again? (yes or no)')
     if not input().lower().startswith('y'):
         break
+
+
+
+
+# With all the comments and a few changes to text.
+
+
+
+
+while True:
+    # Reset the board.
+    theBoard = [' '] * 10
+    playerLetter, computerLetter = inputPlayerLetter()
+    # PV:- This lets the player choose their character, assigning the opposite character to the computer
+    # Lines 133-175 (from the website) assigned to Phavan Velnathan - 20961030
+    turn = whoGoesFirst()
+    # PV:- The code randomly decides who gets to make the first move
+    print('The ' + turn + ' will make the first play.')
+    # PV:- This displays who will go first
+    gameIsPlaying = True
+    # PV:- This code monitors if the game is active or finished
+    
+    while gameIsPlaying:
+        # PV:- If the game is active, this loop will allow both player and computer to take turns playing
+        if turn == 'player':
+            # PV:- Player's turn unless false, then it is the computers
+            drawBoard(theBoard)
+            # PV:- Creates the game board on the screen
+            move = getPlayerMove(theBoard)
+            # PV:- Allows the player to select where they will move and checks if player is making a possible move
+            
+            makeMove(theBoard, playerLetter, move)
+            # PV:- This code places the players character onto the board
+            
+            if isWinner(theBoard, playerLetter):
+                # PV:- The code checks if isWinner returns as True and if you won on your turn
+                drawBoard(theBoard)
+                # PV:- This displays the board that won
+                print('Congratulations, you have beaten the computer and won!')
+                # PV:- This prints text congratulating the winner
+                gameIsPlaying = False
+                # PV:- Prevents the game from continuing onto the computers turn
+            
+            else:
+                # PV:- This code checks if the game is tied by filling in the entire on your turn using an else statement
+                if isBoardFull(theBoard):
+                    drawBoard(theBoard)
+                    print('The game is a tie!')
+                    # PV:- If the above code comes back as True, then the tied board is displayed and a text is printed saying the game was tied
+                    break
+                # PV:- The while loop is then broken and prints a text asking the player to play again
+                # PV:- If the else statement is False then the code uses the next else statement
+                else:
+                    turn = 'computer'
+                    # PV:- Allows the computer to have a turn at the game
+        else:
+            # PV:- It is the computer's turn if the turn variable was not the players
+            move = getComputerMove(theBoard, computerLetter)
+            # PV:- Makes the computer choose where it wants to place its character
+            makeMove(theBoard, computerLetter, move)
+            # PV:- This code places the computers character onto the board
+            
+            if isWinner(theBoard, computerLetter):
+                # PV:- The code checks if isWinner returns as True and if the computer won on the turn
+                drawBoard(theBoard)
+                # PV:- This displays the board that won
+                print('You have lost to the computer!')
+                # PV:- This prints a text saying you lost to the computer
+                gameIsPlaying = False
+                # PV:- Prevents the game from continuing onto the players turn
+            else:
+                # PV:- This code checks if the game is tied by filling in the entire on the computers turn using an else statement
+                if isBoardFull(theBoard):
+                    drawBoard(theBoard)
+                    print('The game is a tie!')
+                    # PV:- If the above code comes back as True, then the tied board is displayed and a text is printed saying the game was tied
+                    break
+                # PV:- The while loop is then broken and prints a text asking the player to play again
+                # PV:- If the else statement is False then the code uses the next else statement
+                else:
+                    turn = 'player'
+                    # PV:- if the game is not completed by the computer then the it becomes the players turn and the while loop continues
+                    
+    print('How about another round player? (yes or no)')
+    # PV:- This prints asks if the player would like another round of the game
+    # PV:- If gameIsPlaying is set to False this block of code will run, which means the game has ended
+    if not input().lower().startswith('y'):
+        # PV:- If the input entered by the player does not start with 'y' then the loop of the game and ends it
+        # PV:- if the player does want a rematch then the loop occurs, starting the game again
+        break
+    print('GAME OVER!')
+    # PV:- Prints text telling the player the game is finished
+    
+# Reference :- Sweigart, A. (2015). 10 TIC-TAC-TOE. Chapter 10 - tic-tac-toe. Retrieved December 7, 2021, from https://inventwithpython.com/invent4thed/chapter10.html. 
