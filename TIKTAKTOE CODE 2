@@ -1,1 +1,9 @@
+# Created by Matthew Kim - 20882490
 
+def getBoardCopy(board):
+    # Make a copy of the board list and return it.
+    boardCopy = []
+    for i in board:
+        boardCopy.append(i)
+        return boardCopy
+        
