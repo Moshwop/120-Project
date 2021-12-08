@@ -1,6 +1,8 @@
-# Lucas Baranoski 20962406
+# Ninja Battle Tic-Tac-Toe
 
-#Ninja Tic-Tac-Toe
+# Craeted by: Lucas Baranoski - 20962406, Matthew Kim - 20882490, Hossein Kariminia - 20976477, and Phavan Velnathan - 20961030
+
+# Lucas Baranoski - 20962406
 
 import random 
 
@@ -21,16 +23,17 @@ def inputPlayerLetter():
     #and the computer's letter as the second
     
     letter = ''
-    while not (letter == 'X' or letter == 'O'):
-        print('Do you want to be X or O?')
+    while not (letter == 'X' or letter == 'I'):
+    print('The great ninja war has started and you must battle your opponent, choose your weapon and battle them on the legendary tik tak toe battle field. ')
+        print('Do you want to use a ninja star: X or a Katana: I ?')
         letter = input().upper()
     
     #the first element in the list is the player's letter;
     #the second is the computer's letter
     if letter == 'X':
-        return ['X', 'O']
+        return ['X', 'I']
     else: 
-        return ['O', 'X']
+        return ['I', 'x']
 
 def whoGoesFirst():
     #randomly chooses who goes first
@@ -97,7 +100,7 @@ def getBoardCopy(board):
      def getComputerMove(board, computerLetter):
         # Given a board and the computer's letter, determine where to move and return that move.
         if computerLetter == 'X':
-            playerLetter = 'O'
+            playerLetter = 'I'
         else:
             playerLetter = 'X'
     
@@ -139,7 +142,7 @@ def getBoardCopy(board):
      return True
 
 
- print('Welcome to Tic-Tac-Toe!')
+ print('Welcome to Ninja Battle Tic-Tac-Toe!')
 
 while True:
     # Reset the board.
@@ -149,7 +152,7 @@ while True:
     # Lines 133-175 (from the website) assigned to Phavan Velnathan - 20961030
     turn = whoGoesFirst()
     # PV:- The code randomly decides who gets to make the first move
-    print('The ' + turn + ' will make the first play.')
+    print('The ' + turn + ' will make the first move.')
     # PV:- This displays who will go first
     gameIsPlaying = True
     # PV:- This code monitors if the game is active or finished
@@ -170,7 +173,7 @@ while True:
                 # PV:- The code checks if isWinner returns as True and if you won on your turn
                 drawBoard(theBoard)
                 # PV:- This displays the board that won
-                print('Congratulations, you have beaten the computer and won!')
+                print('Victory, you have won the battle!')
                 # PV:- This prints text congratulating the winner
                 gameIsPlaying = False
                 # PV:- Prevents the game from continuing onto the computers turn
@@ -179,7 +182,7 @@ while True:
                 # PV:- This code checks if the game is tied by filling in the entire on your turn using an else statement
                 if isBoardFull(theBoard):
                     drawBoard(theBoard)
-                    print('The game is a tie!')
+                    print('You and your opponent are unable to continue, the battle is a draw and you live to fight another day.')
                     # PV:- If the above code comes back as True, then the tied board is displayed and a text is printed saying the game was tied
                     break
                 # PV:- The while loop is then broken and prints a text asking the player to play again
@@ -198,7 +201,7 @@ while True:
                 # PV:- The code checks if isWinner returns as True and if the computer won on the turn
                 drawBoard(theBoard)
                 # PV:- This displays the board that won
-                print('You have lost to the computer!')
+                print('Your opponent has beaten you and you run away.')
                 # PV:- This prints a text saying you lost to the computer
                 gameIsPlaying = False
                 # PV:- Prevents the game from continuing onto the players turn
@@ -206,7 +209,7 @@ while True:
                 # PV:- This code checks if the game is tied by filling in the entire on the computers turn using an else statement
                 if isBoardFull(theBoard):
                     drawBoard(theBoard)
-                    print('The game is a tie!')
+                    print('You and your opponent are unable to continue, the battle is a draw and you live to fight another day.')
                     # PV:- If the above code comes back as True, then the tied board is displayed and a text is printed saying the game was tied
                     break
                 # PV:- The while loop is then broken and prints a text asking the player to play again
@@ -215,14 +218,14 @@ while True:
                     turn = 'player'
                     # PV:- if the game is not completed by the computer then the it becomes the players turn and the while loop continues
                     
-    print('How about another round player? (yes or no)')
+    print('How about another battle ninja? (yes or no)')
     # PV:- This prints asks if the player would like another round of the game
     # PV:- If gameIsPlaying is set to False this block of code will run, which means the game has ended
     if not input().lower().startswith('y'):
         # PV:- If the input entered by the player does not start with 'y' then the loop of the game and ends it
         # PV:- if the player does want a rematch then the loop occurs, starting the game again
         break
-    print('GAME OVER!')
+    print('The War Has Ended')
     # PV:- Prints text telling the player the game is finished
     
 # Reference :- Sweigart, A. (2015). 10 TIC-TAC-TOE. Chapter 10 - tic-tac-toe. Retrieved December 7, 2021, from https://inventwithpython.com/invent4thed/chapter10.html. 
