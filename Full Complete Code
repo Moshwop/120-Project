@@ -1,8 +1,8 @@
 # Ninja Battle Tic-Tac-Toe
 
-# Craeted by: Lucas Baranoski - 20962406, Matthew Kim - 20882490, Hossein Kariminia - 20976477, and Phavan Velnathan - 20961030
+# Created by: Lucas Baranoski - 20962406, Matthew Kim - 20882490, Hossein Kariminia - 20976477, and Phavan Velnathan - 20961030
 
-# Lucas Baranoski - 20962406
+# Section 1 - Lucas Baranoski - 20962406
 
 import random 
 
@@ -62,7 +62,7 @@ def isWinner (bo, le):
         (bo[7] == le and bo[5] == le and bo[3] == le) or
         (bo[9] == le and bo[5] == le and bo[1] == le))
         
-# Created by Matthew Kim - 20882490
+# Section 2 - Matthew Kim - 20882490
 
 def getBoardCopy(board):
     # Make a copy of the board list and return it.
@@ -103,8 +103,11 @@ def getBoardCopy(board):
             playerLetter = 'I'
         else:
             playerLetter = 'X'
-    
-     # Tic Tac Toe algorithm part 3 - Hossein Kariminia
+   
+   
+# Section 3 - Hossein Kariminia - 20976477
+
+
      # Checking to see if there are possibilities to win
      for i in range(1, 10):
          boardCopy = getBoardCopy(board)
@@ -141,6 +144,7 @@ def getBoardCopy(board):
              return False
      return True
 
+ # Section 4 - Phavan Velnathan - 20961030
 
  print('Welcome to Ninja Battle Tic-Tac-Toe!')
 
@@ -149,7 +153,6 @@ while True:
     theBoard = [' '] * 10
     playerLetter, computerLetter = inputPlayerLetter()
     # PV:- This lets the player choose their character, assigning the opposite character to the computer
-    # Lines 133-175 (from the website) assigned to Phavan Velnathan - 20961030
     turn = whoGoesFirst()
     # PV:- The code randomly decides who gets to make the first move
     print('The ' + turn + ' will make the first move.')
@@ -230,16 +233,6 @@ while True:
     
 # Reference :- Sweigart, A. (2015). 10 TIC-TAC-TOE. Chapter 10 - tic-tac-toe. Retrieved December 7, 2021, from https://inventwithpython.com/invent4thed/chapter10.html. 
 © 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
 
 
