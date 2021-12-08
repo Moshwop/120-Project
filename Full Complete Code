@@ -65,7 +65,7 @@ def isWinner (bo, le):
 # Created by Matthew Kim - 20882490
 
 def getBoardCopy(board):
-    # Make a copy of the board list and return it.
+    # Function makes and returns a copy of the board list.
     boardCopy = []
     for i in board:
         boardCopy.append(i)
@@ -76,11 +76,11 @@ def getBoardCopy(board):
         return board[move] == ' '
         
         def getPlayerMove(board):
-            # Let the player enter their move.
+            # Player may enter their move.
             move = ' '
             while move not in '1 2 3 4 5 6 7 8 9' .split() or not
                 isSpaceFree(board, int(move)):
-                  print('What is your next move? (1-9)')
+                  print('Pick your next move! (1-9)')
                   move = input()
             return int(move)
             
