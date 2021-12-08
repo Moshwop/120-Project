@@ -101,7 +101,7 @@ def getBoardCopy(board):
         else:
             playerLetter = 'X'
     
-     # Tic Tac Toe algorithm
+     # Tic Tac Toe algorithm part 3 - Hossein Kariminia
      # Checking to see if there are possibilities to win
      for i in range(1, 10):
          boardCopy = getBoardCopy(board)
