@@ -72,7 +72,7 @@ def getBoardCopy(board):
     return boardCopy
     
     def isSpaceFree(board, move):
-        # Return True if the passed move is free on the passed board.
+        # If on the passed board, the passed move is free, it will return True.
         return board[move] == ' '
         
         def getPlayerMove(board):
@@ -85,8 +85,8 @@ def getBoardCopy(board):
             return int(move)
             
     def chooseRandomMoveFromList(board, movesList):
-        # Returns a valid move from the passed list on the passed board.
-       # Returns None if there is no valid move.
+        # This returns a valid move onto the passed board from the list.
+       # If no move is completed it will return None.
         possibleMoves = []
         for i in movesList:
             if isSpaceFree(board, i):
